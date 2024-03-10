@@ -1,0 +1,95 @@
+p {
+    
+    color:lightgreen;
+    width:250px;
+    font-size: large;
+    display:flex;
+}
+span#info {
+    position:absolute;
+    top: 180px;
+    left: 140px;
+    
+}
+li {
+    color:yellow;
+    font-size:large;
+    content:none;
+    content: 'Der Benutzername oder das Passwort war falsch. Versuchen Sie es noch mal.' !important;
+}
+input {
+    padding-left:15px;
+    font-size: large;
+    margin-left: 20px;
+    height:50px;
+    border-radius: 20px;
+    
+}
+button {
+    font-size:medium;
+}
+#logindiv {
+    position: absolute;
+    top: 150px;
+    left: 200px;
+    /* box-shadow: 7px 3px 6px yellow;
+    box-shadow: -7px -3px -6px yellow; */
+    backdrop-filter: blur(0.2em);
+    border:1.2px solid black;
+    padding: 20px 30px 15px 15px;
+    
+}
+@media only screen and (min-width: 1300px){
+    #logindiv {
+        left: 500px;
+    }
+}
+@media only screen and (min-width: 1600px){
+    #logindiv {
+        left: 600px;
+    }
+}
+img#see-password {
+    position: absolute;
+    top:3.84cm;
+    right:1cm;
+    width: 40px;
+}
+html {
+    background-color: black;
+    background-image: url('https://localhost/static/img/forest.jpg');
+}
+
+button {
+    margin-left: 20px;
+    margin-top: 15px;
+    width: 230px;
+    border-radius: 10px;
+    border-color: azure;
+    height: 40px;
+    background-color: rgb(104, 14, 189);
+}
+input {
+    margin-bottom:15px;
+    padding-left: 1.4cm;
+    padding-top: 0.8cm;
+    padding-bottom: 0.8cm;
+}
+input[name='password'] {
+    padding-left: 1.6cm;
+}
+img#user {
+    position: absolute;
+    left:1.2cm;
+    top:1.7cm;
+    width: 40px;
+}
+img#password {
+    position: absolute;
+    top:3.85cm;
+    left:1.2cm;
+    width:38px;
+}
+a#link {
+    color:aquamarine
+}

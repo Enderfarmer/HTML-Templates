@@ -1,0 +1,88 @@
+.nav-bar a {
+    text-decoration: none;
+    display:block;
+    font-size: 0.8cm;
+}
+.nav-bar span {
+    font-size: 0.7cm;
+    position:absolute;
+    top:0.23cm;
+    overflow: hidden;
+    
+    
+}
+.nav-bar ul {
+    list-style-type:none;
+    margin: 0;
+    padding:0;
+    background-color: gray;
+}
+.nav-bar ul li a {
+    background-color: gray;
+    padding: 10px;
+    
+}
+.nav-bar a:hover {
+    background: blue;
+    color:aliceblue;
+}
+.nav-bar .active {
+    background-color: blue;
+    color:aliceblue;
+    width: 160px;
+}
+.nav-bar .active img {
+    margin-right: 0.2cm;
+}
+.nav-bar ul li {
+    float: left;
+    text-align: center;
+}
+.dropdown-content {
+    max-height: 0;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    left:0px;
+    top:1.2cm;
+    
+    box-shadow: 10px 2.5px 4px black;
+    background-color: lightgrey;
+    transition: max-height 0.3s; /* Hinzufügen einer Übergangsanimation */
+}
+.dropdown:hover .dropdown-content {
+    max-height: 120px;
+    /* Anpassen der Höhe je nach Bedarf */
+    top:1.2cm;
+    padding-right:10px;
+    
+    
+    
+}
+.dropdown:hover {
+    height: 160px;
+}
+li span.dropdown {
+    display:inline-block;
+    padding:10px 20px 10px 20px;
+    transition: height 1s;
+}
+/* .dropdown:hover {
+    padding-left:0
+} */
+.nav-bar ul{
+    border-bottom: 2px solid black;
+    height:100%
+}
+.nav-bar {
+    background-color: grey !important;
+    height: 60px;
+}
+span span a {
+    color:aqua !important;
+    border-bottom:1px solid black;
+    padding-left:10px !important;
+}
+a[href='http://account/registrieren/'] {
+    padding-bottom:18px !important;
+}
