@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontaktiere uns</title>
+    <style>
+        .notlogin {
+            margin-top:60vh;
+        }
+        body {
+            margin:0 !important;
+            padding:0 !important
+        }
+        html {
+            margin:0 !important;
+            padding:0 !important;
+        }
+        
+    </style>
+    <link rel="shortcut icon" href="https://icons.iconarchive.com/icons/tooschee/misc/128/Book-icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://localhost/static/css/contact.css">
+    <link rel="stylesheet" href="https://localhost/static/css/navbar.css">
+</head>
+<header>
+    {% include 'navbar.html'%}
+    <script>
+        document.getElementById('contact').classList.add('active')
+    </script>
+</header>
+<body>
+   
+    
+    {% for post in posts %}
+        <div>
+            {{post.user}}: <p> <h5>{{post.title}}</h5>{{post.text}}
+            {% if request.user == post.user or request.user.username == 'learner'%}
+            <form action="{% url 'delete_post' post.title %}" method="post" id="delete_post">
+                {% csrf_token %}
+                <img src="https://icons.iconarchive.com/icons/gakuseisean/ivista-2/72/Alarm-Error-icon.png" alt="Nachricht löschen" onclick="document.getElementById('delete_post').submit()" width="30" style="cursor: pointer;" id="delete"><label for="delete">Nachricht löschen</label>
+            </form>
+            {% endif%}
+            </p>
+    {% endfor %}
+    {% if message == True %}
+        {{ form.errors }}
+        <form action="{% url 'contact' %}" method="post" id="form_add" style="bottom:4px;">
+            {% csrf_token %}
+            <input type="text" name="title" id="titleinput" placeholder="Titel" style="padding-left: 15px;position: fixed;">
+            <textarea name="text" id="textinput" placeholder="Nachricht" required rows="10" style="padding-left:10px;padding-top:10px;padding-bottom:-2px;font-family: Arial, Helvetica, sans-serif;"></textarea>
+            <button type="submit" id="add_button">Senden</button>
+        </form>
+    {% endif%}
+    {% if not message == True %}
+        <div style="position:fixed;font-size: x-large;" class="notlogin">Logge dich ein, um Nachrichten zu schreiben</div>
+    {% endif %}
+    <!-- Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste ex, nisi magnam aliquam, qui libero incidunt sequi animi velit quibusdam doloribus? Eligendi aliquid repellendus amet doloribus voluptatem perferendis at nam.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste ex, nisi magnam aliquam, qui libero incidunt sequi animi velit quibusdam doloribus? Eligendi aliquid repellendus amet doloribus voluptatem perferendis at nam.
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste ex, nisi magnam aliquam, qui libero incidunt sequi animi velit quibusdam doloribus? Eligendi aliquid repellendus amet doloribus voluptatem perferendis at nam.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste ex, nisi magnam aliquam, qui libero incidunt sequi animi velit quibusdam doloribus? Eligendi aliquid repellendus amet doloribus voluptatem perfereLorem ipsum dolor, sit amet consectetur adipisicing elit. Iste ex, nisi magnam aliquam, qui libero incidunt sequi animi velit quibusdam doloribus? Eligendi aliquid repellendus amet doloribus voluptatem perferendis at nam.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste ex, nisi magnam aliquam, qui libero incidunt sequi animi velit quibusdam doloribus? Eligendi aliquid repellendus amet doloribus voluptatem perferendis at nam.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste ex, nisi magnam aliquam, qui libero incidunt sequi animi velit quibusdam doloribus? Eligendi aliquid repellendus amet doloribus voluptatem perferendis at nam.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste ex, nisi magnam aliquam, qui libero incidunt sequi animi velit quibusdam doloribus? Eligendi aliquid repellendus amet doloribus voluptatem perferendis at nam.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste ex, nisi magnam aliquam, qui libero incidunt sequi animi velit quibusdam doloribus? Eligendi aliquid repellendus amet doloribus voluptatem perferendis at nam.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste ex, nisi magnam aliquam, qui libero incidunt sequi animi velit quibusdam doloribus? Eligendi aliquid repellendus amet doloribus voluptatem perferendis at nam.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste ex, nisi magnam aliquam, qui libero incidunt sequi animi velit quibusdam doloribus? Eligendi aliquid repellendus amet doloribus voluptatem perferendis at nam.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste ex, nisi magnam aliquam, qui libero incidunt sequi animi velit quibusdam doloribus? Eligendi aliquid repellendus amet doloribus voluptatem perferendis at nam.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste ex, nisi magnam aliquam, qui libero incidunt sequi animi velit quibusdam doloribus? Eligendi aliquid repellendus amet doloribus voluptatem perferendis at nam.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste ex, nisi magnam aliquam, qui libero incidunt sequi animi velit quibusdam doloribus? Eligendi aliquid repellendus amet doloribus voluptatem perferendis at nam.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste ex, nisi magnam aliquam, qui libero incidunt sequi animi velit quibusdam doloribus? Eligendi aliquid repellendus amet doloribus voluptatem perferendis at nam.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste ex, nisi magnam aliquam, qui libero incidunt sequi animi velit quibusdam doloribus? Eligendi aliquid repellendus amet doloribus voluptatem perferendis at nam.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste ex, nisi magnam aliquam, qui libero incidunt sequi animi velit quibusdam doloribus? Eligendi aliquid repellendus amet doloribus voluptatem perferendis at nam.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste ex, nisi magnam aliquam, qui libero incidunt sequi animi velit quibusdam doloribus? Eligendi aliquid repellendus amet doloribus voluptatem perferendis at nam.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste ex, nisi magnam aliquam, qui libero incidunt sequi animi velit quibusdam doloribus? Eligendi aliquid repellendus amet doloribus voluptatem perferendis at nam.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste ex, nisi magnam aliquam, qui libero incidunt sequi animi velit quibusdam doloribus? Eligendi aliquid repellendus amet doloribus voluptatem perferendis at nam.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste ex, nisi magnam aliquam, qui libero incidunt sequi animi velit quibusdam doloribus? Eligendi aliquid repellendus amet doloribus voluptatem perferendis at nam.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste ex, nisi magnam aliquam, qui libero incidunt sequi animi velit quibusdam doloribus? Eligendi aliquid repellendus amet doloribus voluptatem perferendis at nam.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste ex, nisi magnam aliquam, qui libero incidunt sequi animi velit quibusdam doloribus? Eligendi aliquid repellendus amet doloribus voluptatem perferendis at nam.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste ex, nisi magnam aliquam, qui libero incidunt sequi animi velit quibusdam doloribus? Eligendi aliquid repellendus amet doloribus voluptatem perferendis at nam.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste ex, nisi magnam aliquam, qui libero incidunt sequi animi velit quibusdam doloribus? Eligendi aliquid repellendus amet doloribus voluptatem perferendis at nam.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste ex, nisi magnam aliquam, qui libero incidunt sequi animi velit quibusdam doloribus? Eligendi aliquid repellendus amet doloribus voluptatem perferendis at nam.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste ex, nisi magnam aliquam, qui libero incidunt sequi animi velit quibusdam doloribus? Eligendi aliquid repellendus amet doloribus voluptatem perferendis at nam.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste ex, nisi magnam aliquam, qui libero incidunt sequi animi velit quibusdam doloribus? Eligendi aliquid repellendus amet doloribus voluptatem perferendis at nam.ndis at nam.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste ex, nisi magnam aliquam, qui libero incidunt sequi animi velit quibusdam doloribus? Eligendi aliquid repellendus amet doloribus voluptatem perferendis at nam.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste ex, nisi magnam aliquam, qui libero incidunt sequi animi velit quibusdam doloribus? Eligendi aliquid repellendus amet doloribus voluptatem perferendis at nam.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste ex, nisi magnam aliquam, qui libero incidunt sequi animi velit quibusdam doloribus? Eligendi aliquid repellendus amet doloribus voluptatem perferendis at nam.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste ex, nisi magnam aliquam, qui libero incidunt sequi animi velit quibusdam doloribus? Eligendi aliquid repellendus amet doloribus voluptatem perferendis at nam.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste ex, nisi magnam aliquam, qui libero incidunt sequi animi velit quibusdam doloribus? Eligendi aliquid repellendus amet doloribus voluptatem perferendis at nam.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste ex, nisi magnam aliquam, qui libero incidunt sequi animi velit quibusdam doloribus? Eligendi aliquid repellendus amet doloribus voluptatem perferendis at nam.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste ex, nisi magnam aliquam, qui libero incidunt sequi animi velit quibusdam doloribus? Eligendi aliquid repellendus amet doloribus voluptatem perferendis at nam.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste ex, nisi magnam aliquam, qui libero incidunt sequi animi velit quibusdam doloribus? Eligendi aliquid repellendus amet doloribus voluptatem perferendis at nam.
+     -->
+</body>
+</html>
