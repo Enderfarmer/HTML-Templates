@@ -1,0 +1,246 @@
+/* A little of navigation bar styling */
+
+.nav-bar a {
+    text-decoration: none;
+    display:block;
+    font-size: 0.8cm;
+    text-shadow: 1px 1px 10px rgba(163, 82, 255, 0.653);
+    background: transparent !important;
+}
+nav.nav-bar {
+    margin-top:0px;
+    box-shadow: 3px 4px 10px black;
+    font-family: "Open Sans";
+    background-image: linear-gradient(to right, rgb(134, 181, 239), rgb(109, 165, 248)) !important;
+    height: 90px;
+}
+.nav-bar span {
+    font-size: 0.7cm;
+    overflow: hidden;
+}
+.nav-bar ul {
+    list-style-type:none;
+    margin: 0;
+    padding:0;
+    background-image: linear-gradient(to right, rgb(146, 255, 146), rgb(134, 181, 239), rgb(109, 165, 248)) ;
+    height:100%;
+}
+.nav-bar ul li a {
+    padding: 10px;
+}
+.nav-bar ul li {
+    float: left;
+    text-align: center;
+    width:18vw;
+}
+/* Navbar sticky positioning */
+
+header {
+    position: sticky;
+    top:0px;
+    z-index: 200000;
+}
+.nav-bar a:hover {
+    color:aliceblue !important;
+}
+.nav-bar .active {
+    color:#f0f8ff !important;
+}
+
+/* I didn't want to set up something complex... */
+
+#bgcolor-lightblue {
+    background-color: lightblue !important;
+}
+/* The dropdown(s)'s styling */
+
+#kurse .dropdown:hover {
+    max-height: 600px;
+}
+#kurse .dropdown:hover .dropdown-content {
+    max-height: 600px;
+}
+
+.dropdown-content {
+    max-height: 0;
+    overflow: hidden;
+    position: absolute;
+    width: inherit;
+    left:0px;
+    top:100%;
+    background-image: linear-gradient(to right, rgb(134, 181, 239), rgb(109, 165, 248)) !important;
+    box-shadow: 5px 2.5px 5px black;
+    transition: max-height 0.3s; /* Hinzufügen einer Übergangsanimation */
+}
+.dropdown:hover .dropdown-content {
+    max-height: 140px;
+    /* Anpassen der Höhe je nach Bedarf */
+    top:1.2cm;
+    padding-right:10px;
+    
+}
+.dropdown h3, .dropdown #kursedropdowncontent div {
+    overflow: visible;
+}
+#kursedropdowncontent {
+    background: lightblue !important;
+}
+.dropdown:hover {
+    height: 160px;
+}
+li span.dropdown {
+    display:inline-block;
+    padding:10px 20px 10px 20px;
+    transition: height 1s;
+    width:19vw;
+}
+.dropdown:not(:has(#kursedropdowncontent)) a {
+    color:aqua !important;
+    border-bottom:1px solid black;
+    padding-left:10px !important;
+}
+.kursedropdown {
+    max-height: 0;
+    overflow: hidden;
+    position: absolute;
+    width: inherit;
+    top: 100%;
+    background-image: linear-gradient(to right, rgb(134, 181, 239), rgb(109, 165, 248)) !important;
+    box-shadow: 5px 2.5px 5px black;
+    transform: translateX(-9vw);
+    transition: max-height 0.5s;
+}
+
+#likurse:hover .kursedropdown {
+    max-height: 200px !important;
+    top: calc(100% + 5px); 
+    transform: translateX(-9vw);
+}
+#free-courses:hover .kursedropdown {
+    max-height: 200px !important;
+    top: calc(100% + 5px); 
+    transform: translateX(-9vw);
+}
+
+/* Classics */
+
+body {
+    margin: 0;
+    padding:0
+}
+main {
+    padding:5px;
+}
+
+
+
+#logo {
+    display: inline;
+}
+
+img#dots {
+    display: none;
+    margin-left:90vw !important;
+    
+}
+#hello {
+    margin-left: -15px;
+    margin-top: 10px;
+    font-size: larger;
+}
+
+#accordion div, #accordion h3 {
+    background: lightblue !important;
+    background-image: none !important;
+}
+
+/* Responsiveness for the mobile devices */
+
+@media screen and (max-width:450px) {
+    nav.nav-bar {
+        display:none;
+    }
+    img#dots {
+        display: block;
+        margin-top:30px;
+    }
+    span {
+        display: block;
+    }
+    .nav-bar a {
+        display:auto;
+    }
+    .nav-bar ul li {
+        float:none;
+        width: 100%;
+        height:60px;
+        border-bottom: 1px solid black;
+    }
+    nav.nav-bar {
+        height: 240px !important;
+    }
+    main {
+        margin-top: 200px;
+    }
+    #logout {
+        margin-top:150px;
+
+    }
+    #kontaktieren {
+        border-bottom: 1px solid black;
+    }
+    .kursedropdown {
+        position: relative !important;
+        margin-top: -54px;
+    }
+    #logo {
+        display:none !important;
+    }
+    #Kontos {
+        display: none !important;
+    }
+    #logindiv {
+        margin-left: -25vw !important;
+    }
+    .dropdown {
+        width: 100vw !important;
+        overflow: visible !important;
+        display: none;
+    }
+    #kurse .dropdown {
+        display: block;
+    }
+    #kurse .dropdown-content div {
+        height: auto !important;
+    }
+    .dropdown-content {
+        position: relative !important;
+        max-height: max-content !important;
+        width: 100vw !important;
+        margin-left: -10px;
+        display: block !important;
+    }
+    #logoimage {
+        display: none;
+    }
+    header {
+        position: relative !important;
+    }
+    nav {
+        position: relative !important;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        position: relative !important;
+    }
+    #hello, #logotype {
+        display: none !important;
+    }
+    .kursedropdown {
+        max-height: fit-content !important;
+        transform: translateX(0px);
+        width:100vw !important;
+    }
+    main {
+        margin-top:0 !important;
+    }
+}

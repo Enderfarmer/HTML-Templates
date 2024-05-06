@@ -5,10 +5,12 @@ p {
     font-size: large;
     display:flex;
 }
-span#info {
+p#info {
     position:absolute;
+    display: inline;
     top: 180px;
     left: 140px;
+    color:black !important;
     
 }
 li {
@@ -23,6 +25,10 @@ input {
     margin-left: 20px;
     height:50px;
     border-radius: 20px;
+    z-index:1 !important;
+    position: absolute;
+    top:10px;
+    
     
 }
 button {
@@ -30,8 +36,8 @@ button {
 }
 #logindiv {
     position: absolute;
-    top: 150px;
-    left: 200px;
+    top: 30vh;
+    left: 30vw;
     /* box-shadow: 7px 3px 6px yellow;
     box-shadow: -7px -3px -6px yellow; */
     backdrop-filter: blur(0.2em);
@@ -39,19 +45,11 @@ button {
     padding: 20px 30px 15px 15px;
     
 }
-@media only screen and (min-width: 1300px){
-    #logindiv {
-        left: 500px;
-    }
-}
-@media only screen and (min-width: 1600px){
-    #logindiv {
-        left: 600px;
-    }
-}
+
 img#see-password {
     position: absolute;
-    top:3.84cm;
+    z-index: 1000;
+    top:4.2cm;
     right:1cm;
     width: 40px;
 }
@@ -72,24 +70,40 @@ button {
 input {
     margin-bottom:15px;
     padding-left: 1.4cm;
-    padding-top: 0.8cm;
+    padding-top: 0.8cm !important;
     padding-bottom: 0.8cm;
+    
 }
 input[name='password'] {
     padding-left: 1.6cm;
+    position: relative;
 }
 img#user {
     position: absolute;
     left:1.2cm;
-    top:1.7cm;
+    top:2.1cm;
     width: 40px;
 }
 img#password {
     position: absolute;
-    top:3.85cm;
+    top:4.2cm;
     left:1.2cm;
     width:38px;
 }
 a#link {
     color:aquamarine
+}
+input[name='username'] {
+    margin-top:1.3cm;
+    position: relative;
+}
+@media screen and (max-height:527px) {
+    html {
+        background-image: url('https://localhost/static/img/beach.jpg');
+    }
+}
+@media screen and (max-width:680px){
+    html {
+        background-image: url('https://localhost/static/img/beach.jpg');
+    }
 }

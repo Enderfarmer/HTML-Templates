@@ -1,0 +1,113 @@
+#textinput {
+    position: fixed;
+    margin-bottom: 0;
+    margin-left: 33vw;
+    padding:10px;
+    width: 270px;
+}
+/* #titleinput {
+    position: fixed;
+} */
+#textinput, 
+#titleinput {
+    width:30vw;
+}
+#add_button {
+    position:fixed;
+    margin-left: 65vw;
+    margin-bottom: 20px;
+}
+#textinput,
+#titleinput,
+#add_button {
+    border-radius: 40px;
+    height:40px;
+    font-size: x-large;
+}
+div {
+    color:antiquewhite;
+}
+#form_add {
+    position: absolute;
+    bottom: 10px;
+    height:60px;
+}
+#titleinput {
+    margin-bottom: 20px;
+    padding-left: 15px;
+}
+html {
+    background-image: url('https://localhost/static/img/snow.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    
+}
+header {
+    margin-bottom:80px;
+}
+div.notlogin {
+    margin-top:60vh;
+}
+
+#no-admin-form-add {
+    width: 85vw;
+    padding: 30px;
+    backdrop-filter: blur(0.4em);
+    border-radius: 20px;
+    display: block;
+    margin-left: 20px;
+}
+input#no-admin-titleinput {
+    width: 60vw;
+}
+#no-admin-textinput {
+    padding:  10px;
+    margin: 15px;
+    width: 70vw;
+    height:20vh;
+}
+main form button {
+    font-size: large;
+    color: whitesmoke;
+    background-color: greenyellow;
+    padding: 20px;
+    width:40vw;
+    border-radius: 20px;
+    margin-left: 30px;
+}
+#no-admin-form-add input, 
+#no-admin-form-add textarea {
+    margin: 15px;
+    font-family: "Open Sans";
+    padding: 10px;
+    border-radius: 20px;
+}
+
+main form h1 {
+    color: aliceblue;
+}
+main form button {
+    width: 70vw;
+}
+@media screen and (min-width: 1200px ){
+    main form#no-admin-form-add {
+        width: 60vw;
+    }
+    main  {
+        display: flex;
+        justify-content: center;
+    }
+    main #no-admin-titleinput, 
+    main textarea#no-admin-textinput {
+        width:40vw;
+    }
+    main form button {
+        width: 40vw;
+    }
+}
+@media screen and (max-width:400px){
+    main #no-admin-titleinput, 
+    main textarea#no-admin-textinput {
+        width: 70vw;
+    }
+}
