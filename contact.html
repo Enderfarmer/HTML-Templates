@@ -38,7 +38,7 @@
             {% if request.user == post.user or request.user.username == 'learner'%}
             <form action="{% url 'delete_post' post.title %}" method="post" id="delete_post">
                 {% csrf_token %}
-                <img src="https://icons.iconarchive.com/icons/gakuseisean/ivista-2/72/Alarm-Error-icon.png" alt="Nachricht löschen" onclick="document.getElementById('delete_post').submit()" width="30" style="cursor: pointer;" id="delete"><label for="delete">Nachricht löschen</label>
+                <img src="https://icons.iconarchive.com/icons/gakuseisean/ivista-2/72/Alarm-Error-icon.png" alt="Nachricht löschen" onclick="$('#delete_post').submit()" width="30" style="cursor: pointer;" id="delete"><label for="delete">Nachricht löschen</label>
             </form>
             {% endif%}
             </p>
